@@ -1,0 +1,284 @@
+/* Snehal portfolio — aesthetic layer
+   Inspired by: scalloped-edge postage-stamp frames, scattered editorial objects,
+   sage/olive/cream editorial pages, sticky-note annotations.
+
+   Loaded AFTER wireframes/shared.css to override the mid-fi look. */
+
+:root{
+  /* Tight 3-tone system: ink, warm grey, single accent (rust) */
+  --bg:           #ffffff;
+  --bg-warm:      #f7f6f3;
+  --bg-cool:      #efede8;
+  --paper:        #ffffff;
+  --ink:          #1a1a1a;
+  --ink-soft:     #4a4742;
+  --ink-mute:     #8b867d;
+  --ink-faint:    #c8c4bb;
+  --line:         #e4e1d9;
+  --line-soft:    #efede7;
+
+  /* All former accents collapse into neutral greys so existing code still works */
+  --sage:         #6e6960;   /* now warm grey */
+  --sage-deep:    #3d3a35;
+  --sage-soft:    #b8b3a9;
+  --lilac:        #ebe8e1;
+  --lilac-deep:   #6e6960;
+  --rust:         #b8533a;   /* THE single accent — used sparingly on ✱ + hero italic */
+  --mustard:      #f1efe9;
+  --mustard-deep: #d8d4cb;
+  --rose:         #e8e3da;
+
+  --shadow-card:  0 2px 1px rgba(0,0,0,.04), 0 8px 22px rgba(40,36,28,.10);
+  --shadow-soft:  0 1px 2px rgba(0,0,0,.04), 0 6px 18px rgba(40,36,28,.07);
+  --shadow-pop:   0 4px 4px rgba(0,0,0,.05), 0 18px 36px rgba(40,36,28,.18);
+}
+
+/* ─── Typography upgrades ─────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Caveat:wght@400..700&family=Geist+Mono:wght@400;500&display=swap');
+
+html, body{
+  background: var(--bg);
+  color: var(--ink);
+}
+/* paper grain disabled for white-bg test */
+body::before{ content:none; }
+.wf-page{ position:relative; z-index:1; }
+
+.serif{ font-family: "Fraunces", "Instrument Serif", Georgia, serif; font-weight: 400; font-optical-sizing:auto; font-variation-settings: "SOFT" 50, "WONK" 0; }
+.mono{ font-family: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace; }
+.hand{ font-family: "Caveat", cursive; }
+
+.wf-display{
+  font-family: "Fraunces", "Archivo Black", Impact, serif;
+  font-weight: 900; font-stretch: 110%;
+  letter-spacing: -.025em; line-height: .9;
+  font-variation-settings: "SOFT" 0, "opsz" 144, "WONK" 1;
+}
+
+/* eyebrow + caption */
+.wf-eyebrow{ font-family: "Geist Mono", monospace; font-size: 11px; letter-spacing: .22em; color: var(--ink-mute); }
+.wf-caption{ font-family: "Geist Mono", monospace; font-size: 10px; letter-spacing: .14em; color: var(--ink-mute); }
+
+/* ─── Nav ─────────────────────────────────────────── */
+.wf-nav{
+  border-bottom: none;
+  padding: 18px 0;
+}
+.wf-nav-logo{
+  font-family: "Fraunces", serif; font-style: italic; font-weight: 500;
+  font-size: 24px; letter-spacing: -.01em; color: var(--ink);
+}
+.wf-nav-links li{ font-family: "Geist Mono", monospace; font-size: 11.5px; letter-spacing:.12em; text-transform: uppercase; color: var(--ink-soft); }
+.wf-nav-links li.active{ color: var(--ink); border-bottom: 1.5px solid var(--ink); padding-bottom: 3px; }
+
+/* ─── Buttons / chips ─────────────────────────────── */
+.wf-chip{
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 9px 14px;
+  font-family: "Geist Mono", monospace;
+  font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-soft);
+  box-shadow: var(--shadow-soft);
+}
+.wf-dot{ background: #6e8a5e; }
+
+/* ─── Section heads ───────────────────────────────── */
+.wf-section{ padding: 110px 0; }
+.wf-section-head{
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 16px;
+  margin-bottom: 48px;
+}
+.wf-section-head h2{
+  font-family: "Fraunces", serif; font-weight: 400;
+  font-style: normal;
+  text-transform: none; letter-spacing: -.015em;
+  font-size: 32px; line-height: 1.05;
+}
+
+/* ─── Placeholder image — sage paper card ─────────── */
+.wf-placeholder{
+  background:
+    radial-gradient(120% 80% at 30% 20%, rgba(255,255,255,.08), transparent 50%),
+    var(--sage);
+  border: none;
+  border-radius: 4px;
+  color: rgba(255,255,255,.6);
+  font-family: "Geist Mono", monospace;
+  font-size: 10px;
+  box-shadow: var(--shadow-soft);
+}
+.wf-placeholder span{ background: rgba(255,255,255,.12); color: #f4efe3; padding: 4px 8px; border-radius: 2px; }
+
+/* ─── Modal panel (was postage-stamp) ────────────── */
+.stamp{
+  position: relative;
+  background: var(--paper);
+  padding: 56px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.12);
+}
+
+/* ─── Sticky note ─────────────────────────────────── */
+.sticky{
+  position: absolute;
+  background: var(--mustard);
+  color: #4a3c10;
+  font-family: "Caveat", cursive;
+  font-size: 22px; line-height: 1.15;
+  padding: 22px 22px 26px;
+  width: 180px;
+  box-shadow:
+    0 1px 1px rgba(0,0,0,.05),
+    0 12px 24px rgba(40,36,28,.18),
+    inset 0 -10px 16px rgba(0,0,0,.03);
+  /* curled corner illusion */
+  background-image:
+    linear-gradient(135deg, transparent 88%, rgba(0,0,0,.06) 92%, rgba(0,0,0,.18) 100%),
+    linear-gradient(var(--mustard), var(--mustard));
+}
+.sticky::after{
+  content:"";
+  position:absolute; right:0; bottom:0;
+  width: 22px; height: 22px;
+  background: linear-gradient(135deg, transparent 50%, var(--bg) 50%);
+  filter: drop-shadow(-2px -2px 2px rgba(0,0,0,.08));
+}
+
+/* ─── Polaroid (used for ads) ─────────────────────── */
+.polaroid{
+  background: var(--paper);
+  padding: 14px 14px 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 12px 22px rgba(40,36,28,.14);
+}
+.polaroid .photo{
+  background:
+    radial-gradient(120% 80% at 30% 20%, rgba(255,255,255,.1), transparent 50%),
+    var(--sage);
+  position: relative; overflow: hidden;
+}
+.polaroid .caption{
+  font-family: "Fraunces", serif;
+  font-size: 14px; font-weight: 400; color: #2c2920;
+  text-align: center; padding: 12px 6px 18px;
+  line-height: 1.3; letter-spacing: -.01em;
+}
+
+/* ─── Editorial sage card (used for archive grid) ── */
+.editorial-card{
+  background: var(--sage);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  box-shadow: var(--shadow-soft);
+}
+.editorial-card .spine{
+  position:absolute; right:14px; top:0; bottom:0; width: 2px;
+  background: rgba(255,255,255,.18);
+  box-shadow: -1px 0 0 rgba(0,0,0,.1);
+}
+.editorial-card .ribbon{
+  position:absolute; left:24px; top:0;
+  width: 6px; height: 60%;
+  background: linear-gradient(var(--sage-deep), var(--sage-deep) 90%, transparent);
+}
+.editorial-card .corner-tag{
+  position:absolute; top:16px; left:14px;
+  font-family: "Geist Mono", monospace;
+  font-size: 9px; letter-spacing: .18em;
+  color: rgba(255,255,255,.55);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* hover lift */
+.lift{ transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s; }
+.lift:hover{ transform: translateY(-4px); box-shadow: var(--shadow-pop); }
+
+/* ─── Marquee text ────────────────────────────────── */
+.marquee-word{
+  font-family: "Fraunces", serif;
+  font-style: normal; font-weight: 300;
+  font-size: 48px;
+  color: var(--ink);
+}
+.marquee-word.alt{ color: var(--sage); font-weight: 500; }
+
+/* ─── Dashed underlines for links ─────────────────── */
+a.editorial-link{
+  color: var(--sage-deep);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--sage);
+  padding-bottom: 1px;
+}
+
+/* ─── Star sparkle bullet ─────────────────────────── */
+.spark{ display:inline-block; color: var(--rust); transform: translateY(-2px); }
+
+/* ─── Responsive ──────────────────────────────────── */
+/* Tablet & smaller */
+@media (max-width: 960px) {
+  .wf-page { padding: 0 24px !important; }
+  .wf-section { padding: 72px 0 !important; }
+
+  /* Hero: stack photo below text, shrink headline */
+  .hero-section { grid-template-columns: 1fr !important; gap: 32px !important; padding: 72px 0 56px !important; }
+  .hero-section h1 { font-size: 52px !important; line-height: 1.05 !important; }
+  .hero-photo { max-width: 360px; margin: 0 auto; }
+
+  /* Nav: shrink link gap, allow wrap */
+  .wf-nav-links { gap: 16px !important; flex-wrap: wrap; }
+
+  /* Work index peek panel — hide on smaller screens (overlaps content) */
+  .wf-section .peek-panel { display: none !important; }
+  .wf-section .work-row .work-name { font-size: 24px !important; }
+
+  /* About section: stack columns */
+  .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .about-grid > div:first-child { max-width: 280px; }
+
+  /* Résumé: stack columns */
+  .resume-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+
+  /* Polaroids grid: 2 cols */
+  .polaroid-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
+
+  /* Toolbox: 3 cols of logos */
+  .toolbox-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 12px !important; }
+
+  /* Drawer: stack image + meta */
+  .drawer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .stamp { padding: 32px !important; }
+  .drawer-name { font-size: 26px !important; }
+
+  /* Contact footer: stack heading + links */
+  .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .footer-grid h2 { font-size: 40px !important; }
+}
+
+/* Phone */
+@media (max-width: 560px) {
+  .wf-page { padding: 0 16px !important; }
+  .hero-section h1 { font-size: 38px !important; }
+  .wf-section-head h2 { font-size: 26px !important; }
+  .wf-section .work-row .work-name { font-size: 20px !important; }
+  .wf-nav-logo { font-size: 18px !important; }
+  .wf-nav-links { font-size: 10px !important; gap: 10px !important; }
+
+  /* Polaroids: 1 col */
+  .polaroid-grid { grid-template-columns: 1fr !important; }
+
+  /* Toolbox: 2 cols */
+  .toolbox-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Drawer */
+  .stamp { padding: 20px !important; }
+  .drawer-name { font-size: 22px !important; }
+
+  /* Footer "Contact." */
+  .footer-grid h2 { font-size: 28px !important; }
+}
