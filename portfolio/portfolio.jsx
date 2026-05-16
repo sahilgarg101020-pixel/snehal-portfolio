@@ -533,7 +533,7 @@ function Footer() {
   const links = [
     { label:"LinkedIn",  value:"snehal-ralhan",     href:"https://www.linkedin.com/in/snehal-ralhan/", Icon: IconLinkedIn },
     { label:"Email",     value:"snehal.ralh@gmail.com",  href:"mailto:snehal.ralh@gmail.com",          Icon: IconEmail   },
-    { label:"Phone",     value:"+91 98765 43210",   href:"tel:+919876543210",                          Icon: IconPhone   },
+    { label:"Phone",     value:"+91 9814206400",    href:"tel:+919814206400",                          Icon: IconPhone   },
     { label:"Résumé",    value:"View on Google Docs", href:"https://docs.google.com/document/d/13Sx0SelEiL9HbeBrWddufwynTccRgcts/edit?usp=sharing&ouid=110028352139456504685&rtpof=true&sd=true", Icon: IconResume  },
   ];
   return (
