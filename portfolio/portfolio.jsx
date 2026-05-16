@@ -139,7 +139,7 @@ function Hero({ tweaks }) {
           told with intent.
         </h1>
         <p style={{ maxWidth: 560, marginTop: 38, fontSize: 18, lineHeight: 1.55, color: "var(--ink-soft)" }}>
-          Two years into marketing and PR. Memotag, Inkcraft, and now Vibencode,  I write the LinkedIn posts, send the journalist pitches, and build the decks that make brands click for the people they&apos;re trying to reach.
+          Press pitches, LinkedIn carousels, pitch decks that put brands into the rooms they want to be in.
         </p>
         <div style={{ display:"flex", gap:10, marginTop: 32 }}>
           <a href="#work" className="wf-chip" style={{ textDecoration:"none", color:"inherit" }}>See the work <span className="spark">↓</span></a>
