@@ -541,9 +541,6 @@ function Footer() {
       <div className="footer-grid" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:80, alignItems:"start" }}>
         <div>
           <h2 className="serif" style={{ fontSize:48, fontWeight:400, letterSpacing:"-.02em", lineHeight:1, margin:0 }}>Contact.</h2>
-          <p style={{ marginTop:24, fontSize:16, color:"var(--ink-soft)", lineHeight:1.65, maxWidth:320 }}>
-            Open to identity, packaging and editorial projects.<br/>Currently between studios.
-          </p>
         </div>
         <div style={{ display:"flex", flexDirection:"column" }}>
           {links.map(({ label, value, href, Icon }, i) => (
