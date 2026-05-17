@@ -266,6 +266,10 @@ a.editorial-link{
   .hero-section h1 { font-size: 38px !important; }
   .wf-section-head h2 { font-size: 26px !important; }
   .wf-section .work-row .work-name { font-size: 20px !important; }
+
+  /* Stack work-row meta below the name on phones so long project names don't fight a side column */
+  .work-row { grid-template-columns: 36px 1fr !important; column-gap: 14px !important; row-gap: 6px !important; padding: 18px 4px !important; }
+  .work-row > *:nth-child(3) { grid-column: 2 !important; }
   .wf-nav-logo { font-size: 18px !important; }
   .wf-nav-links { font-size: 10px !important; gap: 10px !important; }
 
